@@ -1,20 +1,41 @@
 let numberOfSquares = 64; //just to test the grid make
 //need to make a way for user to choose how many grid squares then 
 //change this to an event listener that sets the variable
+let current = 'darken';
+let ready = false;
 
-const set = document.querySelector('.set');
 const grid = document.querySelector('.grid');
 const restart = document.querySelector('.restart');
 const erase = document.querySelector('.erase');
 const rainbow = document.querySelector('.rainbow');
-
-let current = 'darken';
+const big = document.querySelector('.big');
+const medium = document.querySelector('.medium');
+const small = document.querySelector('.small');
+const shade = document.querySelector('.shader');
+const changeColor = document.querySelector('.change');
+const colorPicker = document.querySelector('#color')
 
 restart.addEventListener('click',restartGrid);
 
-set.addEventListener('click',()=>{
-    current = 'darken'
-});
+big.addEventListener('click', ()=> {
+    numberOfSquares = 100;
+    setGrid();
+})
+
+medium.addEventListener('click', () =>{
+    numberOfSquares = 50;
+    setGrid();
+})
+
+small.addEventListener('click',()=>{
+    numberOfSquares = 32;
+    setGrid();
+})
+
+shade.addEventListener('click', ()=>{
+    current = 'darken';
+}
+)
 
 erase.addEventListener('click', () => {
     current = 'erase';
@@ -23,6 +44,14 @@ erase.addEventListener('click', () => {
 rainbow.addEventListener('click', ()=>{
     current = 'rainbow';
 })
+
+changeColor.addEventListener('click', ()=>{
+    current = 'colour';
+})
+
+function change(e){
+    return document.getElementById('color').value;
+}
 
 function eraseIt (e){
     e.target.background = 'white';
@@ -38,7 +67,7 @@ function setGrid (squares){
     for(let i=0;i<squares*squares;i++){
         const box = document.createElement('div');
         box.style.background = 'white';
-        box.dataset.count = 0
+        box.dataset.count = 0;
         box.style.borderRadius = '1px 1px 1px 1px';
         box.addEventListener('mouseover', draw);
         grid.appendChild(box);
@@ -51,9 +80,8 @@ function resetGrid(){
 
 function restartGrid(){
     grid.innerHTML = '';
-    setGrid(numberOfSquares)
+    setGrid(numberOfSquares);
 }
-
 
 function draw(e){
     if (current == 'darken'){
@@ -82,25 +110,29 @@ function draw(e){
             e.target.dataset.count +=1;
         }
         else if (e.target.dataset.count == '0111111'){
-            e.target.className = 'seventh'
+            e.target.className = 'seventh';
         }
         else if (e.target.dataset.count = '01111111'){
-            e.target.className = 'eighth'
+            e.target.className = 'eighth';
         }
         else if (e.target.dataset.count = '011111111'){
-            e.target.className = 'ninth'
+            e.target.className = 'ninth';
         }
         else if (e.target.dataset.count = '0111111111'){
-            e.target.className = 'tenth'
+            e.target.className = 'tenth';
         }
     }
     else if (current == 'erase') {
-        e.target.className = 'eraser'
+        e.target.className = 'eraser';
     }  
     else if (current == 'rainbow'){
         e.target.className ='';
         e.target.style.background = `rgb(${Math.round(Math.random() * 255)},${Math.round(Math.random() * 255)},${Math.round(Math.random() * 256)})`;
-    }    
+    }
+    else if (current == 'colour'){
+        e.target.className = '';
+        e.target.style.background = change();
+    }   
 }
 
 window.onload = () => {

@@ -2,17 +2,31 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet"> 
     </head>
     <body>
         <header>
 
         </header>
         <main>
-            <div class="grid"></div>
-            <button class='set'>set grid</button>
-            <button class = 'restart'>restart</button>
-            <button class = 'erase'>erase</button>
-            <button class = 'rainbow'>rainbow</button>
+            <div class='container'>
+                <div id="etch"><span id='lessFont'>magic</span>      Etch A Sketch      <span id='lessFont'>screen</span></div>
+                <div class="grid"></div>
+                <button class='big'>Most Squares</button>
+                <button class ='medium'>In-Between Squares</button>
+                <button class = 'small'>Least Squares</button>
+                <div class = 'controls'>
+                    <input id='color' type = 'color' value = '000000'/>
+                    <button class = 'change'>Change Color</button>
+                    <button class = 'shader'>Shade</button>
+                    <button class = 'rainbow'>Rainbow</button>
+                    <button class = 'erase'>Erase</button>
+                    <button class = 'restart'>Restart</button>
+                </div>
+
+            </div>
         </main>
         <footer>
 

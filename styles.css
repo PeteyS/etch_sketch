@@ -1,10 +1,39 @@
-.grid{
-    display: grid;
-    width: 500px;
-    height: 500px;
-    background-color: white;
+body{
+    background-image: url(background.jpg);
 }
+.container{
+    border-radius: 1%;
+    width: 900px;
+    height: 900px;
+    background-color: brown;
+    margin: 0 auto;
+    margin-top: 30px;
+    overflow: auto;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.521);
 
+}
+.grid{
+    border-radius: 3%;
+    display: grid;
+    margin: 0 auto;
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 3px rgba(31, 30, 30, 0.233);
+}
+#etch{
+    color: rgb(197, 146, 18);
+    padding-top: 20px;
+    margin: 0 auto;
+    width:450px;
+    font-size: 70px;
+    font-weight: 1000;
+    font-family: 'Italianno',cursive;
+}
+#lessFont{
+    font-weight: 250;
+    font-size: 35px;
+}
 .eraser{
     background:white !important;
 }
