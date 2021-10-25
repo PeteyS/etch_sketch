@@ -20,33 +20,71 @@ restart.addEventListener('click',restartGrid);
 big.addEventListener('click', ()=> {
     numberOfSquares = 100;
     setGrid();
+    big.style.background = 'rgb(197, 146, 18)';
+    big.style.color = 'brown';
+    medium.style.background = 'brown';
+    medium.style.color = 'black';
+    small.style.background = 'brown';
+    small.style.color = 'black';
 })
 
 medium.addEventListener('click', () =>{
     numberOfSquares = 50;
     setGrid();
+    big.style.background = 'brown';
+    big.style.color = 'black';
+    medium.style.background = 'rgb(197, 146, 18)';
+    medium.style.color = 'brown';
+    small.style.background = 'brown';
+    small.style.color = 'black';
 })
 
 small.addEventListener('click',()=>{
     numberOfSquares = 32;
     setGrid();
+    big.style.background = 'brown';
+    big.style.color = 'black';
+    medium.style.background = 'brown';
+    medium.style.color = 'black';
+    small.style.background = 'rgb(197, 146, 18)';
+    small.style.color = 'brown';
 })
 
 shade.addEventListener('click', ()=>{
     current = 'darken';
+    shade.style.background = 'rgb(197, 146, 18)';
+    erase.style.background = 'transparent';
+    rainbow.style.background = 'transparent';
+    restart.style.background = 'transparent';
+    changeColor.style.background = 'transparent';
 }
 )
 
 erase.addEventListener('click', () => {
     current = 'erase';
+    erase.style.background = 'rgb(197, 146, 18)';
+    restart.style.background = 'transparent';
+    rainbow.style.background = 'transparent';
+    shade.style.background = 'transparent';
+    changeColor.style.background = 'transparent';
 });
 
 rainbow.addEventListener('click', ()=>{
     current = 'rainbow';
+    rainbow.style.background = 'rgb(197, 146, 18)';
+    erase.style.background = 'transparent';
+    restart.style.background = 'transparent';
+    shade.style.background = 'transparent';
+    changeColor.style.background = 'transparent';
 })
 
 changeColor.addEventListener('click', ()=>{
     current = 'colour';
+    changeColor.style.background = 'rgb(197, 146, 18)';
+    erase.style.background = 'transparent';
+    rainbow.style.background = 'transparent';
+    shade.style.background = 'transparent';
+    restart.style.background = 'transparent';
 })
 
 function change(e){
@@ -68,7 +106,6 @@ function setGrid (squares){
         const box = document.createElement('div');
         box.style.background = 'white';
         box.dataset.count = 0;
-        box.style.borderRadius = '1px 1px 1px 1px';
         box.addEventListener('mouseover', draw);
         grid.appendChild(box);
     }
@@ -137,4 +174,6 @@ function draw(e){
 
 window.onload = () => {
     setGrid (numberOfSquares);
+    big.style.background = 'rgb(197, 146, 18)';
+    shade.style.background = 'rgb(197, 146, 18)';
 }

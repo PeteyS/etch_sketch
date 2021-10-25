@@ -1,5 +1,63 @@
+
 body{
     background-image: url(background.jpg);
+}
+.controls{
+position: absolute;
+width: 75px;
+height: 400px;
+top:0;
+margin-top: 270px;
+margin-left: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.erase,.rainbow,.shader,.restart,.change{
+    border: solid 3px;
+    border-color: rgb(197, 146, 18);
+    border-radius: 2%;
+    background-color: transparent;
+    height: 40px;
+}
+.erase:hover,.rainbow:hover,.shader:hover,.restart:hover,.change:hover{
+    transform: scale(1.05);
+}
+#color{
+    margin: auto;
+    border:solid 1px;
+    border-color: rgb(197, 146, 18);
+    padding: 0;
+    height: 40px;
+    width: 74px;
+}
+#together{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    color: rgb(197, 146, 18);
+}
+.size{
+    margin: auto;
+    margin-top: 5px;
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.medium{
+    margin: auto;
+}
+.big,.medium,.small{
+    border-radius: 100%;
+    border:solid 3px;
+    height: 85px;
+    width: 100px;
+    border-color: rgb(197, 146, 18);
+    background-color: transparent;
+}
+.big:hover,.medium:hover,.small:hover{
+    transform: scale(1.05);
 }
 .container{
     border-radius: 1%;
@@ -18,7 +76,6 @@ body{
     margin: 0 auto;
     width: 700px;
     height: 700px;
-    background-color: white;
     box-shadow: 0px 0px 5px 3px rgba(31, 30, 30, 0.233);
 }
 #etch{
